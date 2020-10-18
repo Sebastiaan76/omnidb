@@ -1,0 +1,13 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: omnidb
+  when:
+    branch:
+      include:
+      - master
+timeout: 60
+notification: {}
